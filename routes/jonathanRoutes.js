@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import express from "express";
 import sequelize from "sequelize";
-
 import db from "../database/initializeDB.js";
-
 import biomeSQL from "../server/controllers/jonathanController.js";
 
 const router = express.Router();
