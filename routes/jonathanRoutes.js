@@ -7,7 +7,7 @@ import biomeSQL from "../server/controllers/jonathanController.js";
 const router = express.Router();
 
 /// /////////////////////////////////
-/// ////Animals Database - Biome - Jonathan Chen////////
+/// ////Animals Database - Biome - Jonathan Chen/////////
 /// /////////////////////////////////
 router
   .route("/biome")
