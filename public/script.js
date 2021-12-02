@@ -138,3 +138,25 @@ ${biome.data
 </table>`;
 }
 biomeFunction();
+
+
+async function lifestyleFunction() {
+  const lifestyle = await fetch("./api/lifestyle").then((response) => response.json());
+  //console.log(lifestyle);
+  document.querySelector(".lifestyleData").innerHTML = `<table>
+<tr><th>lifestyle_id</th><th>diet</th><th>pack</th></tr> 
+
+${lifestyle.data
+  .map(
+    (elmt) => `<tr>
+<td>${JSON.stringify(elmt.lifestyle_id)}</td> 
+<td>${JSON.stringify(elmt.diet)}</td> 
+<td>${JSON.stringify(elmt.pack)}</td>
+</tr>`
+  )
+  .join("")} 
+  
+
+</table>`;
+}
+lifestyleFunction();
