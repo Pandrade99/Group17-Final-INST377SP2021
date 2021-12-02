@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 import express from 'express';
 import sequelize from 'sequelize';
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
 
 import db from '../database/initializeDB.js';
 
-import animalLifeStyle from '../server/controllers/yilingController.js';
+import lifeStyle from '../server/controllers/yilingController.js';
 
 const router = express.Router();
 
@@ -16,18 +16,21 @@ const router = express.Router();
 router.route('/lifestyle')  
   .get(async (req, res) => {
     try { 
-      const lifestyle = await db.LifeStyle.findAll();
+      const lifestyle = await db.sequelizeDB.query(lifeStyle, {
+        type: sequelize.QueryTypes.SELECT,
+      });
       const reply = lifestyle.length > 0 ? { data: lifestyle} : { message: 'no results found' };
       console.log('touched /lifestyle with GET');
       res.json(reply);
-    } catch (error) {
-      console.log(error);
+      return reply;
+    } catch (err) {
+      console.error(err);
       res.send('Something went wrong on the server');
     }
   })
   .put(async (req, res) => {
     try { 
-      await db.LifeStyle.update(
+      await db.lifestyle.update(
         {
           domestication: req.body.domestication,
           diet: req.body.diet
@@ -40,39 +43,41 @@ router.route('/lifestyle')
       );
       console.log('touched /lifestyle with PUT');
       res.send('Successfully Updated');
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
       res.send('Something went wrong on the server');
     }
   })
   .post(async (req, res) => {
-    const lifestyle = await db.LifeStyle.findAll();
+    const lifestyle = await db.sequelizeDB.query(lifeStyle, {
+      type: sequelize.QueryTypes.SELECT,
+    });
     const currentId = (await lifestyle.length) + 1;
     try { 
-      const newLifeStyle = await db.LifeStyle.create({
-        lifestyle-id: currentId,
+      const newlifestyle = await db.lifestyle.create({
+        lifestyle_id: currentId,
         pack: req.body.pack,
         domestication: req.body.domestication,
         diet: req.body.diet
       });
       console.log('touched /lifestyle with POST');
-      res.json(newLifeStyle)
-    } catch (error) {
-      console.log(error);
+      res.json(newlifestyle)
+    } catch (err) {
+      console.error(err);
       res.send('Something went wrong on the server');
     }
   })
   .delete(async (req, res) => {
     try { 
-      await db.LifeStyle.destory({
+      await db.lifestyle.destory({
         where: {
           lifestyle_id: req.params.lifestyle_id
         }
       });
       console.log('touched /lifestyle with DELETE');
       res.sned('Successfully Deleted');
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
       res.send('Something went wrong on the server');
     }
   })

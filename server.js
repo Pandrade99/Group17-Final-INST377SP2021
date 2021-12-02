@@ -2,6 +2,7 @@
 import express from "express";
 import db from "./database/initializeDB.js";
 import apiRoutes from "./routes/jonathanRoutes.js";
+import apiRoutes2 from "./routes/yilingRoutes.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use(express.static(staticFolder));
 app.use("/api", apiRoutes);
+app.use("/api", apiRoutes2);
 
 async function bootServer() {
   try {

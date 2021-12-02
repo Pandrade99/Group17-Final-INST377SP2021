@@ -58,3 +58,16 @@ td {
 .greenText {
   color: forestgreen;
 }
+
+
+table,
+th,
+td {
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blueText {
+  color: blue;
+}
