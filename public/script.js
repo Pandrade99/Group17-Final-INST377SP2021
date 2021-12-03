@@ -160,3 +160,25 @@ ${lifestyle.data
 </table>`;
 }
 lifestyleFunction();
+
+
+async function hierarchyFunction() {
+  const hierachy = await fetch("./api/hierarchy").then((response) => response.json());
+  //console.log(hierarchy);
+  document.querySelector(".hierarchyData").innerHTML = `<table>
+<tr><th>hierarchy_id</th><th>class</th><th>phylum</th></tr> 
+
+${hierarchy.data
+  .map(
+    (elmt) => `<tr>
+<td>${JSON.stringify(elmt.hierarchy_id)}</td> 
+<td>${JSON.stringify(elmt.class)}</td> 
+<td>${JSON.stringify(elmt.phylum)}</td>
+</tr>`
+  )
+  .join("")} 
+  
+
+</table>`;
+}
+hierarchyFunction();

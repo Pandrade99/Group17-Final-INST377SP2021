@@ -75,7 +75,7 @@ router.route('/lifestyle')
         }
       });
       console.log('touched /lifestyle with DELETE');
-      res.sned('Successfully Deleted');
+      res.send('Successfully Deleted');
     } catch (err) {
       console.error(err);
       res.send('Something went wrong on the server');
