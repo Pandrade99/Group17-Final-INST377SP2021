@@ -163,7 +163,7 @@ lifestyleFunction();
 
 
 async function hierarchyFunction() {
-  const hierachy = await fetch("./api/hierarchy").then((response) => response.json());
+  const hierarchy = await fetch("./api/hierarchy").then((response) => response.json());
   //console.log(hierarchy);
   document.querySelector(".hierarchyData").innerHTML = `<table>
 <tr><th>hierarchy_id</th><th>class</th><th>phylum</th></tr> 
