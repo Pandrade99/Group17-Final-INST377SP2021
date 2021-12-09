@@ -180,3 +180,23 @@ ${hierarchy.data
 </table>`;
 }
 hierarchyFunction();
+
+async function extinctionFunction() {
+  const extinction = await fetch('./api/extinction').then((response) => response.json());
+  document.querySelector('.extinctionData').innerHTML = `<table>
+<tr><th>extinction_id</th><th>cause</th><th>age extinct</th></tr> 
+
+${extinction.data
+    .map(
+      (elmt) => `<tr>
+<td>${JSON.stringify(elmt.extinction_id)}</td> 
+<td>${JSON.stringify(elmt.cause)}</td> 
+<td>${JSON.stringify(elmt.age_species_went_extinct)}</td>
+</tr>`
+    )
+    .join('')} 
+  
+
+</table>`;
+}
+extinctionFunction();

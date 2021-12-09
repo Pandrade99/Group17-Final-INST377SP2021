@@ -3,4 +3,4 @@ export default `SELECT lifestyle_id,
     domestication,
     diet
 FROM
-    lifestyle l;`
+    lifestyle l;`;
