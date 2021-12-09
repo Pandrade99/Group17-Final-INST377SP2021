@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group 17 Project</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <nav
-      class="navbar navigationbar"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <!--logo-->
-      <div class="navbar-brand">
-        <!--<a class="navbar-item" href="https://bulma.io">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group 17 Project</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav class="navbar navigationbar" role="navigation" aria-label="main navigation">
+    <!--logo-->
+    <div class="navbar-brand">
+      <!--<a class="navbar-item" href="https://bulma.io">
           <img
             src="https://bulma.io/images/bulma-logo.png"
             width="112"
@@ -28,29 +22,23 @@
           />
         </a>-->
 
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item" href="favorites.html">Favorites</a>
+        <a class="navbar-item" href="aboutus.html">About Us</a>
+        <a class="navbar-item" href="data.html">Data</a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="index.html">Home</a>
-          <a class="navbar-item" href="favorites.html">Favorites</a>
-          <a class="navbar-item" href="aboutus.html">About Us</a>
-          <a class="navbar-item" href="data.html">Data</a>
-        </div>
-
-        <div class="navbar-end">
-          <!--
+      <div class="navbar-end">
+        <!--
           <div class="navbar-item">
             <div class="buttons">
               <a class="button is-primary">
@@ -60,21 +48,19 @@
             </div>
           </div>
           -->
-        </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="title">Favorites</div>
-    <div class="container">
-      <div class="column">
-        <form action="tbd" method="POST" onsubmit="functionx">
+  <div class="title">Favorites</div>
+  <div class="container">
+    <div class="column">
+      <form class="add-form" method="POST">
         <div class="field">
           <label class="common-name">Animal common name: </label>
-          <div class="control">
-            <input class="input" type="text" placeholder="e.g. Tyrannosaurus rex">
-          </div>
+          <input class="input" type="text" placeholder="e.g. Tyrannosaurus rex">
         </div>
-        
+
         <div class="field">
           <label class="species">Species: </label>
           <div class="control">
@@ -84,7 +70,7 @@
 
         <div class="field">
           <div class="control">
-            <label class="radio"> Can this animal fly? 
+            <label class="radio"> Can this animal fly?
               <input type="radio" name="aviation">
               Yes
             </label>
@@ -105,13 +91,15 @@
         <div class="button is-primary">
           <label class="add-button">Add new animal</label>
         </div>
-      </div>
+      </form>
     </div>
   </div>
-  
-  
+  </div>
 
-    <!--Our script-->
-    <script src="script.js" charset="utf-8"></script>
-  </body>
+
+
+  <!--Our script-->
+  <script src="script.js" charset="utf-8"></script>
+</body>
+
 </html>
