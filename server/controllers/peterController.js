@@ -1,2 +1,6 @@
-export default `SELECT *
-FROM hierarchy h`;
+export default `SELECT hierarchy_id,
+class,
+phylum
+FROM
+hierarchy h;`;
+

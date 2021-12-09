@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Group 17 Project</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-  <nav class="navbar navigationbar" role="navigation" aria-label="main navigation">
-    <!--logo-->
-    <div class="navbar-brand">
-      <!--<a class="navbar-item" href="https://bulma.io">
+  <body>
+    <!--nav bar*************************************************************-->
+    <nav
+      class="navbar navigationbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <!--logo-->
+      <div class="navbar-brand">
+        <!--<a class="navbar-item" href="https://bulma.io">
           <img
             src="https://bulma.io/images/bulma-logo.png"
             width="112"
@@ -49,18 +45,19 @@
           </div>
           -->
       </div>
-    </div>
-  </nav>
-
-  <div class="title">Favorites</div>
-  <div class="container">
-    <div class="column">
-      <form class="add-form" method="POST">
+    </nav>
+<!--form*************************************************************-->
+    <div class="title">Favorites</div>
+    <div class="container">
+      <div class="column">
+        <form action="tbd" method="POST" onsubmit="functionx">
         <div class="field">
           <label class="common-name">Animal common name: </label>
-          <input class="input" type="text" placeholder="e.g. Tyrannosaurus rex">
-        </div>
-
+          <div class="control">
+            <input class="input" type="text" placeholder="e.g. Tyrannosaurus rex">
+          </div>
+        </div> 
+        
         <div class="field">
           <label class="species">Species: </label>
           <div class="control">
@@ -94,12 +91,19 @@
       </form>
     </div>
   </div>
-  </div>
+  
+<!--display data*************************************************************-->
+<h2 class="title2 greenText">Biome Table</h2>  
+<div class="biomeData"></div> 
 
+<h2 class="title2 blueText">LifeStyle Table</h2>  
+<div class="lifestyleData"></div> 
 
+<h2 class="title2 redText">Hierarchy Table</h2>  
+<div class="hierarchyData"></div> 
 
-  <!--Our script-->
-  <script src="script.js" charset="utf-8"></script>
-</body>
-
+        
+    <!--Our script-->
+    <script src="script.js" charset="utf-8"></script>
+  </body>
 </html>

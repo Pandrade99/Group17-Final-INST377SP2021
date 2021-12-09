@@ -16,30 +16,66 @@
 .title2 {
   text-align: center;
   margin-top: 25px;
+  font-size: 2em;
 }
 
-.form{
-    margin: auto;
-    max-width:400px;
-    text-align: center
+.form {
+  margin: auto;
+  max-width: 400px;
+  text-align: center;
 }
 
-input[type='submit'], button, [aria-label]{
+input[type="submit"],
+button,
+[aria-label] {
   cursor: pointer;
 }
-#edit-box{
+#edit-box {
   display: none;
   max-width: 80%;
   margin: auto;
   margin-top: 10px;
 }
 
-td{
-    background-color: aliceblue;
-    padding-right: 10px;
-    text-align: left;
+td {
+  background-color: aliceblue;
+  padding-right: 10px;
+  text-align: left;
 }
 
-.to-do{
-    background: transparent !important;
+.to-do {
+  background: transparent !important;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.greenText {
+  color: forestgreen;
+}
+
+
+table,
+th,
+td {
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blueText {
+  color: blue;
+}
+
+.redText {
+  color: red;
+}
+
+img {
+  width: 1350px;
 }

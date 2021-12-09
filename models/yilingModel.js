@@ -1,6 +1,6 @@
 export default (database, DataTypes) => {
-  const LifeStyle = database.define(
-    'Life_Style',
+  const lifestyle = database.define(
+    'lifestyle',
     {
       lifestyle_id: {
         type: DataTypes.INTEGER,
