@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import express from 'express';
-import db from './database/initializeDB.js';
 import apiRoutes from './routes/jonathanRoutes.js';
 import apiRoutes2 from './routes/yilingRoutes.js';
 import apiRoutes3 from './routes/peterRoutes.js';

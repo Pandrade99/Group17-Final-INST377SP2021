@@ -38,7 +38,7 @@ router
         cause: req.body.cause,
         age_species_went_extinct: req.body.age_species_went_extinct
       });
-      console.log('touched /biome with POST')
+      console.log('touched /extinction with POST');
       res.json(newExtinction);
     } catch (err) {
       console.error(err);
