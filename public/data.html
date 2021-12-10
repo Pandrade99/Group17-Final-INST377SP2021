@@ -59,6 +59,8 @@
     <li>"a": Data Visualization for Extinct Animals' Diet Types</li>
     <li>"b": Data Visualization for Extinct Animals' Region</li>
     <li>"c": Data Visualization for Extinct Animals' Category</li>
+    <li>"d": Data Visualization for Extinct Animals' Extinction Data</Datag></li>
+
   </ul>
 
   <input id="input" type="text" /><button onclick="submitbutton()">Submit</button>
@@ -159,8 +161,36 @@
         document.getElementById("results").innerHTML = chart;
       }
 
-      if (userinput != "a" & userinput != "b" & userinput != "c") {
-        chart = "Please enter a letter from a, b, c."
+      if (userinput == "d") {
+        chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          theme: "light2",
+          title: {
+            text: "Distribution of Extinct Animals Cause of Extinction"
+          },
+          axisY: {
+            title: "Types of Extinction Reasons"
+          },
+          data: [{
+            type: "column",
+            dataPoints: [
+              { y: 2, label: "Air Pollution" },
+              { y: 2, label: "Unsafe Habitat" },
+              { y: 2, label: "Hunting" },
+              { y: 2, label: "Disease" },
+              { y: 2, label: "Pesticides" },
+              { y: 2, label: "Shrinking of Breeding" },
+              { y: 2, label: "Habitat loss due to soil erosion" },
+              { y: 2, label: "Unknown"}
+            ]
+          }]
+        });
+        chart.render();
+        document.getElementById("results").innerHTML = chart;
+      }
+      
+      if (userinput != "a" & userinput != "b" & userinput != "c" & userinput != "d") {
+        chart = "Please enter a letter from a, b, c, or d."
         document.getElementById("results").innerHTML = chart;
       }
 
