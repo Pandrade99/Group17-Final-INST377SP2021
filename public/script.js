@@ -1,8 +1,8 @@
-//nav bar******************************************************************
-document.addEventListener("DOMContentLoaded", () => {
+// nav bar******************************************************************
+document.addEventListener('DOMContentLoaded', () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
-    document.querySelectorAll(".navbar-burger"),
+    document.querySelectorAll('.navbar-burger'),
     0
   );
 
@@ -10,20 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if ($navbarBurgers.length > 0) {
     // Add a click event on each of them
     $navbarBurgers.forEach((el) => {
-      el.addEventListener("click", () => {
+      el.addEventListener('click', () => {
         // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
+        const { target } = el.dataset;
         const $target = document.getElementById(target);
 
         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle("is-active");
-        $target.classList.toggle("is-active");
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
       });
     });
   }
 });
 
-//form javascript******************************************************************
+// form javascript******************************************************************
 /* var app = new (function () {
   this.el = document.getElementById("tasks");
 
@@ -117,68 +117,86 @@ function CloseInput() {
   document.getElementById("edit-box").style.display = "none";
 } */
 
-//display data******************************************************************
+// display data******************************************************************
 async function biomeFunction() {
-  const biome = await fetch("./api/biome").then((response) => response.json());
-  //console.log(biome);
-  document.querySelector(".biomeData").innerHTML = `<table>
+  const biome = await fetch('./api/biome').then((response) => response.json());
+  // console.log(biome);
+  document.querySelector('.biomeData').innerHTML = `<table>
 <tr><th>biome_id</th><th>biome</th><th>continent</th></tr> 
 
 ${biome.data
-  .map(
-    (elmt) => `<tr>
+    .map(
+      (elmt) => `<tr>
 <td>${JSON.stringify(elmt.biome_id)}</td> 
 <td>${JSON.stringify(elmt.Biome)}</td> 
 <td>${JSON.stringify(elmt.Continent)}</td>
 </tr>`
-  )
-  .join("")} 
+    )
+    .join('')} 
   
 
 </table>`;
 }
 biomeFunction();
 
-
 async function lifestyleFunction() {
-  const lifestyle = await fetch("./api/lifestyle").then((response) => response.json());
-  //console.log(lifestyle);
-  document.querySelector(".lifestyleData").innerHTML = `<table>
+  const lifestyle = await fetch('./api/lifestyle').then((response) => response.json());
+  // console.log(lifestyle);
+  document.querySelector('.lifestyleData').innerHTML = `<table>
 <tr><th>lifestyle_id</th><th>diet</th><th>pack</th></tr> 
 
 ${lifestyle.data
-  .map(
-    (elmt) => `<tr>
+    .map(
+      (elmt) => `<tr>
 <td>${JSON.stringify(elmt.lifestyle_id)}</td> 
 <td>${JSON.stringify(elmt.diet)}</td> 
 <td>${JSON.stringify(elmt.pack)}</td>
 </tr>`
-  )
-  .join("")} 
+    )
+    .join('')} 
   
 
 </table>`;
 }
 lifestyleFunction();
 
-
 async function hierarchyFunction() {
-  const hierarchy = await fetch("./api/hierarchy").then((response) => response.json());
-  //console.log(hierarchy);
-  document.querySelector(".hierarchyData").innerHTML = `<table>
+  const hierarchy = await fetch('./api/hierarchy').then((response) => response.json());
+  // console.log(hierarchy);
+  document.querySelector('.hierarchyData').innerHTML = `<table>
 <tr><th>hierarchy_id</th><th>class</th><th>phylum</th></tr> 
 
 ${hierarchy.data
-  .map(
-    (elmt) => `<tr>
-<td>${JSON.stringify(elmt.hierarchy_id)}</td> 
-<td>${JSON.stringify(elmt.class)}</td> 
-<td>${JSON.stringify(elmt.phylum)}</td>
-</tr>`
-  )
-  .join("")} 
+    .map(
+      (elmt) => `<tr>
+          <td>${JSON.stringify(elmt.hierarchy_id)}</td> 
+          <td>${JSON.stringify(elmt.class)}</td> 
+          <td>${JSON.stringify(elmt.phylum)}</td>
+          </tr>`
+    )
+    .join('')} 
   
 
 </table>`;
 }
 hierarchyFunction();
+
+async function extinctionFunction() {
+  const extinction = await fetch('./api/extinction').then((response) => response.json());
+  document.querySelector('.extinctionData').innerHTML = `<table>
+<tr><th>extinction_id</th><th>cause</th><th>age extinct</th></tr> 
+
+${extinction.data
+    .map(
+      (elmt) => `<tr>
+<td>${JSON.stringify(elmt.extinction_id)}</td> 
+<td>${JSON.stringify(elmt.cause)}</td> 
+<td>${JSON.stringify(elmt.age_species_went_extinct)}</td>
+</tr>`
+    )
+    .join('')} 
+  
+
+</table>`;
+}
+extinctionFunction();
