@@ -17,3 +17,22 @@ iPhone 6/7/8/X
 Macbook Pro 13/15
 
 ### Developer Manual
+
+To Install
+
+1. npm install
+
+To Run
+
+1. npm start
+
+API
+
+1. allyRoutes - extinction data
+2. jonathanRoute - biome data
+3. peterRoutes - hierarchy data
+4. yilingRoutes - lifestyle data
+
+Known Bugs
+
+1. Favorites form does not actually add to database
