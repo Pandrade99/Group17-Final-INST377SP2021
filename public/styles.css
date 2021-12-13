@@ -1,5 +1,5 @@
 .navigationbar {
-  background-color: darkgray;
+  background-color: rgb(148, 137, 90);
 }
 
 .title {
@@ -9,8 +9,9 @@
 }
 
 .contentbox {
-  background-color: lightgray;
+  background-color: rgb(218, 199, 140);
   height: 450px;
+  padding: 10px;
 }
 
 .title2 {
@@ -59,7 +60,6 @@ td {
   color: forestgreen;
 }
 
-
 table,
 th,
 td {
@@ -82,4 +82,12 @@ img {
 
 .purpleText {
   color: purple;
+}
+
+.lightText {
+  color: white;
+}
+
+.center {
+  text-align: center;
 }
