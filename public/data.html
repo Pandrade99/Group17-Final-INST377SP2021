@@ -52,14 +52,15 @@
     </div>
   </nav>
 
-  <div class="title">Data</div>
+  <div class="title">Data</div> 
 
-  <p>Enter a, b, or c, then click submit button:</p>
+  <p>Enter a, b, c, d, or e then click submit button:</p>
   <ul>
     <li>"a": Data Visualization for Extinct Animals' Diet Types</li>
     <li>"b": Data Visualization for Extinct Animals' Region</li>
     <li>"c": Data Visualization for Extinct Animals' Category</li>
     <li>"d": Data Visualization for Extinct Animals' Extinction Data</Datag></li>
+    <li>"e": Data Visualization for Extinct Animals' Sizes</Datag></li>
 
   </ul>
 
@@ -97,7 +98,7 @@
         document.getElementById("results").innerHTML = chart;
       }
 
-      if (userinput == "b") {
+      else if (userinput == "b") {
         chart = new CanvasJS.Chart("chartContainer", {
           animationEnabled: true,
           theme: "light2",
@@ -124,7 +125,7 @@
         document.getElementById("results").innerHTML = chart;
       }
 
-      if (userinput == "c") {
+      else if (userinput == "c") {
         chart = new CanvasJS.Chart("chartContainer", {
           theme: "dark2",
           title: {
@@ -161,7 +162,7 @@
         document.getElementById("results").innerHTML = chart;
       }
 
-      if (userinput == "d") {
+      else if (userinput == "d") {
         chart = new CanvasJS.Chart("chartContainer", {
           animationEnabled: true,
           theme: "light2",
@@ -171,7 +172,7 @@
           axisY: {
             title: "Types of Extinction Reasons"
           },
-          data: [{
+          data: [{ 
             type: "column",
             dataPoints: [
               { y: 2, label: "Air Pollution" },
@@ -188,8 +189,31 @@
         chart.render();
         document.getElementById("results").innerHTML = chart;
       }
+
+      else if (userinput == "e") {
+        chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          theme: "dark1",
+          title: {
+            text: "Distribution of largest Extinct Animals"
+          },
+          axisY: {
+            title: "Height in feet"
+          },
+          data: [{ 
+            type: "column",
+            dataPoints: [
+              { y: 70, label: "Argentinosaurus" },
+              { y: 18, label: "Seismosaurus" },
+              { y: 10, label: "Woolly Mammoth" },            
+            ]
+          }]
+        });
+        chart.render();
+        document.getElementById("results").innerHTML = chart;
+      }
       
-      if (userinput != "a" & userinput != "b" & userinput != "c" & userinput != "d") {
+      else {
         chart = "Please enter a letter from a, b, c, or d."
         document.getElementById("results").innerHTML = chart;
       }
